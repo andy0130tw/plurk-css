@@ -1,0 +1,24 @@
+// Posts -- Controls
+.manager a {
+  display /**/: inline-block;
+  min-width: 2em;
+  text-align: center;
+}
+
+// Posts -- Media
+a.meta {
+  /* mostly media */
+  transition: background 100ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.plurk a.pictureservices {
+  padding: 0;
+}
+
+// Posts -- New message highlight
+#timeline_cnt .plurk.plurk .plurk_cnt.new6 { background-color: #FF9; }
+#timeline_cnt .plurk.plurk .plurk_cnt.new5 { background-color: #FFA; }
+#timeline_cnt .plurk.plurk .plurk_cnt.new4 { background-color: #FFB; }
+#timeline_cnt .plurk.plurk .plurk_cnt.new3 { background-color: #FFC; }
+#timeline_cnt .plurk.plurk .plurk_cnt.new2 { background-color: #FFD; }
+#timeline_cnt .plurk.plurk .plurk_cnt.new1 { background-color: #FFE; }

@@ -1,0 +1,127 @@
+// Timeline -- Structure
+#timeline_holder {
+  @include material-shadow-polymer-4dp;
+  // background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/school.png);
+  // background: url(http://res.cloudinary.com/qbane/image/upload/v1454758953/food-alpha_jhwbn6.pnsg);
+
+  background-image: url(https://i.imgur.com/OBFJrTi.png);
+  background-color: rgba(#00161C, .2);
+
+  max-height: 75vh !important;
+}
+
+#bottom_line {
+  background: rgba(black, .2);
+  height: 1px;
+}
+
+// Timeline -- Bottom time indicator
+.bottom_start, .bottom_end {
+  // regular timestamps
+  @extend %use-decimal-fonts;
+  font-size: .8em;
+  background: rgba(white, .9);
+  padding: 0 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(black, .3);
+}
+
+.day_start .bottom_start {
+  // marker for a day
+  @extend %use-decimal-fonts;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  padding: 0 8px;
+  background: rgba(white, .9);
+  color: #888;
+  font-weight: 500;
+
+  // tag icon
+  @include icon-font-plurk('\f040');
+  &:before {
+    font-size: .9em;
+    margin-right: 4px;
+  }
+}
+
+#time_show {
+  // timestamp for selected post
+  @extend %use-decimal-fonts;
+  font-size: 1em;
+
+  $paddingH: 4px;
+  $paddingV: 8px;
+
+  padding: $paddingH $paddingV;
+  transform: translateY(-$paddingH) translateX(-$paddingV);
+
+  // always show to apply animations
+  display: block !important;
+  pointer-events: none;
+  opacity: 0.01;
+  transition: top  150ms $material-ease-out,
+              left 150ms $material-ease-out;
+
+  box-shadow: 0px 0px 6px rgba(black, .7);
+
+  // up-arrow icon
+  @include icon-font-plurk('\f007');
+  &:before {
+    font-size: .7em;
+    color: white;
+    margin-right: 4px;
+  }
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+// Timeline -- Response count
+.plurk {
+  // normal state
+  .response_count {
+    font-family: 'Roboto Mono', Menlo, 'Droid Mono', monospace;
+    text-align: center;
+    display: inline-block;
+
+    min-width: 20px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    background: rgba(material-color('blue', 50), 0.7);
+    color: material-color('blue', 600);
+    box-shadow: 1px 0 2px rgba(black, .25);
+
+    // originally detached from the plurk box
+    // attached when opening (-> display state)
+    transform: translateX(8px);
+
+    transition: all 250ms $material-ease-std;
+    transition-property: transform, border-radius, background, box-shadow;
+   }
+
+  &.new .response_count {
+    color: white;
+    background: material-color('red');
+    box-shadow: 1px 0 4px 1px rgba(material-color('red'), .55);
+  }
+
+  // display state
+  &.display.plurk_box {
+    .response_count {
+      // attached to the plurk box
+      // remove rounded corners of the side that are being glued onto it
+      transform: translateX(0);
+      border-radius: 0 4px 4px 0;
+      background: rgba(material-color('blue', 50), 0.9);
+      box-shadow: 2px 0 6px 4px rgba(material-color('blue', 600), .75);
+
+      // to hide the shadow from the box
+      z-index: -1;
+    }
+
+    &.new .response_count {
+      box-shadow: 2px 0 6px 4px rgba(material-color('red'), .75);
+    }
+  }
+}

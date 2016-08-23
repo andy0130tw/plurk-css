@@ -1,0 +1,6 @@
+// Ref. https://material.google.com/motion/duration-easing.html
+
+$material-ease-std:   cubic-bezier(.4, 0, .2, 1);
+$material-ease-out:   cubic-bezier( 0, 0, .2, 1);
+$material-ease-in:    cubic-bezier(.4, 0,  1, 1);
+$material-ease-sharp: cubic-bezier(.4, 0, .6, 1);

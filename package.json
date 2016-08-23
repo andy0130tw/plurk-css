@@ -1,0 +1,30 @@
+{
+  "name": "plurk-css",
+  "version": "0.0.1",
+  "description": "A Material Design like theme for my Plurk.",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp sass",
+    "watch": "gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andy0130tw/plurk-css.git"
+  },
+  "author": "Andy Pan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andy0130tw/plurk-css/issues"
+  },
+  "homepage": "https://github.com/andy0130tw/plurk-css#readme",
+  "private": true,
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-if": "^2.0.1",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.3.2"
+  }
+}

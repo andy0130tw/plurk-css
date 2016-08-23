@@ -1,0 +1,164 @@
+/* Dashboard -- Composing area */
+#main_poster {
+  font-family: Lato, 'Roboto Slab', 'Droid Serif', serif;
+}
+
+#main_poster .plurkForm {
+  padding: 0;
+}
+
+#input_big, #input_small {
+  margin-left: 0 !important;
+  padding-left: 4px !important;
+}
+
+#input_big {
+  margin-top: 8px !important;
+}
+
+#input_small {
+  margin-top: 4px !important;
+}
+
+.m_qualifier {
+  padding: 4px 8px;
+}
+
+.dd_img, .submit_img {
+  transition: background 250ms ease-out;
+}
+
+#main_poster .submit_img {
+  margin-top: 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  /*box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+              0 1px 18px 0 rgba(0, 0, 0, 0.12),
+              0 3px 5px -1px rgba(0, 0, 0, 0.4);*/
+  /* bonus: move the Plurk button to the bottom of the text area *
+   * disable the box-shadow above to match the style             */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* move the messages less the position of Plurk button
+   disable this if you don't apply the bonus above */
+#plurk_to, .whispers_hint {
+  position: relative;
+  right: 88px;
+}
+
+#main_poster .icons_holder {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard -- Additional info */
+#dash-additional-info:before {
+  /* a demostration using pseudo-element to add contents */
+  content /**/: 'PROFILE';
+  display /**/: block;
+  color: #3f51b5;
+  font-weight: 700;
+  margin: 4px 0 8px;
+}
+
+/* Dashboard -- Stats */
+#profile_views,
+#profile_views + th + td,
+#plurks_count,
+#response_count,
+#join_date,
+#last_visit {
+  font-family: 'Ubuntu Mono', Menlo, 'Roboto Mono', 'Droid Mono', monospace;
+}
+
+/* Dashboard -- Tweaks */
+#about_me {
+  font-size: 115%;
+  line-height: 1.4;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, .35);
+}
+
+#karma {
+  color: white !important;
+  text-shadow: 0 0 1px rgba(0, 0, 0, .2),
+               0 0 2px rgba(0, 0, 0, .3),
+               0 0 4px rgba(0, 0, 0, .5);
+}
+
+#karma_arrow {
+  font-size: 18px;
+}
+
+#full_name .nick_name {
+  font-family: 'Ubuntu Mono', Menlo, 'Roboto Mono', 'Droid Mono', monospace;
+}
+
+/* Dashboard -- Friend list / Fan list */
+#friend_holder,
+#fan_holder {
+  /* the icons of friend must be in one line */
+  margin-left: -11px;
+  margin-right: -11px;
+  /* XXX: preserve space without clearing float */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#fan_holder span {
+  /* no fans QAQ message; giving back margins */
+  display /**/: block;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.friend_man {
+  padding: 8px 12px;
+  border-radius: 2px;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+              0 1px 10px 0 rgba(0, 0, 0, 0.12),
+              0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 250ms cubic-bezier(.4, 0, 1, 1),
+              filter     250ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.friend_man:hover {
+  filter: brightness(1.4);
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12),
+              0 5px 5px -3px rgba(0, 0, 0, 0.4);
+}
+
+#dash-friends-pics .user_link,
+#dash-friends-pics .user_link img,
+#dash-fans-pics    .user_link,
+#dash-fans-pics    .user_link img {
+  border-radius: 50%;
+  border: none;
+  transition: border-radius 100ms ease-in;
+}
+
+#dash-friends-pics .user_link,
+#dash-fans-pics    .user_link {
+  display /**/: block;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+              0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#dash-friends-pics .user_link:hover,
+#dash-friends-pics .user_link:hover img,
+#dash-fans-pics    .user_link:hover,
+#dash-fans-pics    .user_link:hover img {
+  border-radius: 8px;
+}
+
+/* Dashboard -- Award bar specialization */
+#dash-award .award_bar div img {
+  transition: filter 200ms cubic-bezier(.4, 0, 1, 1);
+}
+
+#dash-award .award_bar div:hover img {
+  filter: brightness(1.2)
+          drop-shadow(1px 1px 4px rgba(0, 0, 0, .5));
+}

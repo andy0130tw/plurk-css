@@ -1,0 +1,44 @@
+// Global
+._lch_, textarea {
+  font-family: $fonts-textarea;
+}
+
+textarea {
+  border-radius: 4px;
+}
+
+// Markup -- Common markup styling
+strike {
+  color: #AAA;
+}
+
+code {
+  color: #111;
+  font-family: $fonts-monospace;
+}
+
+// Markup -- Media
+a.ex_link {
+  font-weight: 500;
+  color: material-color('indigo');
+  transition: text-shadow 150ms cubic-bezier(.4, 0, .2, 1);
+
+  // XXX: too much ceremory (?
+  &:hover {
+    text-decoration: none;
+    // text-shadow: 1px 1px 2px rgba(material-color('indigo'), .4);
+  }
+}
+
+a.hashtag {
+  $hashtag-color: material-color('deep-orange', 700);
+
+  font-weight: 500;
+  color: $hashtag-color;
+
+  &:hover {
+    color: white;
+    background-color: $hashtag-color;
+    box-shadow: 1px 1px 3px rgba(black, .25);
+  }
+}

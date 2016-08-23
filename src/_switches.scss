@@ -1,0 +1,150 @@
+// Timeline -- Icon width Unifying
+#filter_tab {
+  .pif-like,
+  .pif-replurk,
+  .pif-messages,
+  .pif-message-my,
+  .pif-message-private {
+    @include icon-font-unify-width;
+  }
+}
+
+// Timeline -- Unread counter
+.unread_generic {
+  font-weight: 700;
+}
+
+#noti_np_count, #noti_re_count {
+  &.unread_generic {
+    @extend %use-decimal-fonts;
+
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: $timeline-button-height;
+    color: white !important;
+    padding: 0 8px;
+    margin-right: -8px;
+    border-radius: 0 4px 4px 0;
+
+    transition: background 250ms $material-ease-std;
+    background: rgba(material-color('pink', 400), .8);
+  }
+}
+
+#noti_np, #noti_re {
+  a:hover .unread_generic {
+    background: rgba(material-color('pink', 600), .8);
+  }
+}
+
+// Timeline -- Switches (common)
+#updater,
+#updater .item a,
+#filter_tab a.has_unread,
+#filter_tab li a.filter_selected,
+#filter_tab:hover li a {
+  // hopefully, 8px is default!
+  // padding-left: 8px;
+  // padding-right: 8px;
+  height: $timeline-button-height !important;
+}
+
+#filter_tab li,
+#noti_np,
+#noti_re_actions,
+#noti_re_view {
+  a {
+    @include material-shadow-polymer-4dp;
+
+    transition: box-shadow 250ms $material-ease-in,
+                opacity    100ms $material-ease-std,
+                color      100ms $material-ease-std,
+                height     250ms $material-ease-std,
+                margin     250ms $material-ease-std;
+
+
+    border-radius: 4px;
+    text-align: left;
+    line-height: $timeline-button-height;
+
+    &:hover {
+      @include material-shadow-polymer-6dp;
+    }
+  }
+}
+
+// Timeline -- View state switches
+#noti_np,
+#noti_re_view {
+  a {
+    margin-left: 8px;
+
+    // "update new messages" button; having different colors on hover
+    &:hover {
+      background: material-color('yellow', 50);
+      color:      material-color('yellow', 900);
+    }
+  }
+}
+
+// Timeline -- Shortcuts
+// selectors are left intentially since they are awesome!
+#noti_np_text:after {
+  // [U]pdate all
+  content: ' [U]';
+}
+
+#noti_re #mark_all_link.updater_link span:after {
+  // [M]ark all as read
+  content: ' [M]';
+}
+
+#noti_re_text:after {
+  // [V]iew all
+  content: ' [V]';
+}
+
+#noti_re .updater_link .pif-cancel + span:after {
+  content: ' [V]';
+}
+
+// Timeline -- Filter switches
+#filter_tab {
+  li a {
+
+    // flex is here to help line up unreading counts
+    display: flex;
+    span {
+      // unreading counts
+      flex: 1 1 auto;
+      font-size: 1.1em;
+      text-align: right;
+      padding: 0;
+      margin-left: 8px;
+      background: transparent;
+      text-shadow: 0 2px 4px rgba(black,.9);
+    }
+
+    &.off_tab.has_unread {
+      background: material-color('red', 100);
+      color:      material-color('red', 600);
+    }
+
+    &.filter_selected {
+      @include material-shadow-polymer-8dp;
+    }
+  }
+
+  &:hover li a {
+    margin-top: 8px !important;
+
+  }
+}
+
+#noti_re #mark_all_link.updater_link {
+  // "mark all as read" button
+  background: material-color('green', 50);
+  &:hover {
+    background: material-color('green', 500);
+  }
+}
