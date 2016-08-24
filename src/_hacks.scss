@@ -1,9 +1,11 @@
 // Hardcoded background settings for f*cking awkward background override
 
-._lch_ {
-  background: url(/static/theme/cold2015-theme/cold2015-bg.jpg) center center !important;
-  background-size: cover !important;
-  background-attachment: fixed !important;
+@if ($HACK-override-background-position) {
+  ._lch_ {
+    background: url(#{$HACK-override-background-image}) center center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
 }
 
 // .unread_generic {
@@ -26,4 +28,7 @@
 .OTHER{ background: url(http://example.com/?BELOW_IS_UNSYNCED_STYLES_USE_IT_AT_YOUR_OWN_RISK); }
 
 .pif-arrow-right::before { left: 0 !important; }
-.pif-bone { display: none !important; }
+
+@if ($HACK-hide-plurk-bones) {
+  .pif-bone { display: none !important; }
+}

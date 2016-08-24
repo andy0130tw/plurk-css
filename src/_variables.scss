@@ -5,6 +5,12 @@ $enable-timeline-switch-shortcut: true;
 $enable-timestamp-transitions: true;
 $enable-timestamp-icons: true;
 
+// ---------- HACKS ----------
+$HACK-plurk-content-shrinks-when-opened: false;  // not recommend; though it's cool
+$HACK-hide-plurk-bones: true;
+$HACK-override-background-position: true;
+$HACK-override-background-image: '/static/theme/cold2015-theme/cold2015-bg.jpg';
+
 // ---------- Fonts ----------
 $fonts-monospace: 'Ubuntu Mono', Menlo, Monaco, Inconsolata, monospace;
 $fonts-textarea: 'Source Han Sans', 'Source Han Sans TC', 'Noto Sans CJK', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
@@ -13,3 +19,4 @@ $fonts-decimal: 'Open Sans', 'Segoe UI', 'Source Sans Pro', 'Trebuchet MS', sans
 // ---------- Metrics ----------
 $timeline-button-height: 28px;
 $timeline-button-border-radius: 4px;
+$qualifier-height-in-em: 1.5em;
