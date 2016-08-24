@@ -132,3 +132,68 @@
     }
   }
 }
+
+/* Timeline -- Arrows */
+.browse_button {
+  /* control the buttons manually */
+  opacity: 1;
+
+  .cmp_arrow_left, .cmp_arrow_right {
+    background: #607d8b;
+    border-radius: 28px;
+    width: 56px;
+    height: 56px;
+
+    &:hover {
+      background: #546e7a;
+      box-shadow: 0 8px 9px -5px rgba(black, .2),
+                  0 15px 22px 2px rgba(black, .14),
+                  0 6px 28px 5px rgba(black, .12);
+    }
+
+    &:active {
+      background: #37474f;
+      box-shadow: 0 9px 11px -5px rgba(black, .2),
+                  0 18px 28px 2px rgba(black, .14),
+                  0 7px 34px 6px rgba(black, .12);
+    }
+
+    &:before {
+      font-size: 20px;
+      padding: 18px;
+      color: white;
+    }
+  }
+
+  // XXX
+  .cmp_back_to_today {
+    font-size: 10px;
+    background: #b0bec5;
+    font-family: Lato, Roboto, sans-serif;
+    text-transform: uppercase;
+
+    &:before {
+      color: #b0bec5;
+    }
+  }
+
+  .cmp_arrow_left,
+  .cmp_arrow_right,
+  .cmp_back_to_today {
+    transition: background 250ms cubic-bezier(.4, 0, .2, 1),
+                box-shadow 250ms cubic-bezier(.4, 0, 1, 1);
+    box-shadow: 0 7px 8px -4px rgba(black, .2),
+                0 13px 19px 2px rgba(black, .14),
+                0 5px 24px 4px rgba(black, .12);
+  }
+
+}
+
+// Timeline -- Creature
+#creature {
+  // box-shadow: 0px 0px 45px 10px rgba(255,255,255,.9);
+  // background: rgba(255,255,255,.65);
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, .4))
+          drop-shadow(0 0 25px rgba(255, 255, 255, .6))
+          drop-shadow(0 0 45px rgba(255, 255, 255, .9));
+}

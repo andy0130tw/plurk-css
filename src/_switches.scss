@@ -24,7 +24,7 @@
     color: white !important;
     padding: 0 8px;
     margin-right: -8px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 $timeline-button-border-radius $timeline-button-border-radius 0;
 
     transition: background 250ms $material-ease-std;
     background: rgba(material-color('pink', 400), .8);
@@ -62,8 +62,8 @@
                 height     250ms $material-ease-std,
                 margin     250ms $material-ease-std;
 
-    border-radius: 4px;
     text-align: left;
+    border-radius: $timeline-button-border-radius;
     line-height: $timeline-button-height;
 
     &:hover {

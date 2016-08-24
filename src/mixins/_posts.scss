@@ -1,0 +1,20 @@
+
+@mixin name-color-manipulation($pattern, $color) {
+  a.name {
+    @if (str_length($pattern) > 0) {
+      &[style*="#{$pattern}"] {
+        color: $color !important;
+        text-shadow: rgba($color, .4);
+      }
+    } @else {
+      color: $color;
+      text-shadow: rgba($color, .4);
+    }
+  }
+}
+
+@mixin new-message-highlight($n, $bg) {
+  #timeline_cnt .plurk.plurk .plurk_cnt.new#{$n} {
+    background: $bg;
+  }
+}

@@ -1,24 +1,163 @@
+// Timeline -- Avatars
+.p_img {
+  @include material-shadow-polymer-8dp;
+  border-bottom: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  transform: translateX(-4px) translateY(4px);
+  transition: border-radius 100ms $material-ease-std,
+              transform     250ms $material-ease-std;
+
+  .plurk.display.plurk_box & {
+    @include material-shadow-polymer-4dp;
+    transform: translateX(24px) translateY(1px);
+    border-radius: 50%;
+    // not working well on webkit
+    z-index: 9999;
+  }
+}
+
+.plurk .plurk_icon {
+  // small icons bound to a avatars 'like' or 'replurk'
+  transition: transform 250ms $material-ease-std;
+}
+
+.plurk.display.plurk_box .plurk_icon {
+  transform: translateY(12px);
+}
+
+// Timeline -- Qualifier
+.qualifier, .m_qualifier {
+  // this also affects the composing area
+  border-radius: 2px;
+  min-height: 1.5em;
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  line-height: 1.5em;
+  border: none;
+  box-shadow: 1px 1px 2px rgba(black, .25);
+}
+
+.qualifier.qual_embedded {
+  // clean-up default styling, use only underline
+  box-shadow: none;
+  background: none !important;
+  text-decoration: underline dotted;
+  border-radius: 0px;
+}
+
+
+// Posts
+.td_cnt {
+  // reset its padding, originally 5px
+  padding-right: 0;
+}
+
+.td_qual {
+  // reset its padding, originally 5px
+  padding-left: 4px;
+}
+
+div .text_holder {
+  transition: color 250ms ease-out;
+  color: #222;
+}
+
+#timeline_cnt .plurk {
+  .plurk_cnt {
+    // initial state
+    will-change: background, padding, transform, border-radius;
+    transition: all 350ms cubic-bezier(.4, 0, .2, 1);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px 4px 0;
+    box-shadow: 0 3px 6px rgba(black, 0.16),
+                0 3px 6px rgba(black, 0.23);
+    background: rgba(251, 251, 255, .65);
+  }
+
+  &.display .plurk_cnt {
+    // when content is expanded
+    box-shadow: 0 10px 20px rgba(black, 0.19),
+                0 6px 6px rgba(black, 0.23);
+    background: rgba(251, 251, 255, .8);
+  }
+
+  &.display.link_extend .plurk_cnt {
+    // when mouse hover
+    background: rgba(251, 251, 255, .9);
+  }
+
+  &.display.plurk_box {
+    z-index: 2000; // originally 1200
+  }
+
+  &.display.plurk_box .plurk_cnt {
+    // when opened
+    // the width will be added accordingly.
+    // padding animation will mess up the calculation,
+    // which is a known limitation
+    padding: 8px 16px 8px 24px;
+    border-radius: 4px 4px 0 0;
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(black, 0.25),
+                0 10px 10px rgba(black, 0.22);
+    background: rgba(255, 255, 255, .95);
+  }
+
+  &.display.plurk_box {
+    /* 503
+     + outer (left 24 + right  8)
+     - inner (left  1 + right  5) */
+    width: 529px;
+  }
+
+  // muted
+  &.muted {
+    opacity: .6;
+    transition: opacity 250ms ease-in;
+
+    .plurk_box {
+      opacity: .9;
+    }
+
+    .plurk_cnt .text_holder {
+      color: #555;
+    }
+  }
+}
+
 // Posts -- Controls
 .manager a {
-  display /**/: inline-block;
+  display: inline-block;
   min-width: 2em;
   text-align: center;
 }
 
 // Posts -- Media
 a.meta {
-  /* mostly media */
-  transition: background 100ms cubic-bezier(.4, 0, .2, 1);
+  // mostly media
+  transition: background 100ms $material-ease-std;
 }
 
 .plurk a.pictureservices {
   padding: 0;
 }
 
+// Timeline -- Name color manipulation
+@include name-color-manipulation('',        #37474f);
+@include name-color-manipulation('rgb(228', #e91e63);  // red
+@include name-color-manipulation('rgb(34',  #03a9f4);  // blue
+@include name-color-manipulation('rgb(10',  #009688);  // green
+@include name-color-manipulation('rgb(174', #9c27b0);  // anony
+// TODO: more colors...
+
 // Posts -- New message highlight
-#timeline_cnt .plurk.plurk .plurk_cnt.new6 { background-color: #FF9; }
-#timeline_cnt .plurk.plurk .plurk_cnt.new5 { background-color: #FFA; }
-#timeline_cnt .plurk.plurk .plurk_cnt.new4 { background-color: #FFB; }
-#timeline_cnt .plurk.plurk .plurk_cnt.new3 { background-color: #FFC; }
-#timeline_cnt .plurk.plurk .plurk_cnt.new2 { background-color: #FFD; }
-#timeline_cnt .plurk.plurk .plurk_cnt.new1 { background-color: #FFE; }
+// because we override the color of the background
+@include new-message-highlight(6, #FF9);
+@include new-message-highlight(5, #FFA);
+@include new-message-highlight(4, #FFB);
+@include new-message-highlight(3, #FFC);
+@include new-message-highlight(2, #FFD);
+@include new-message-highlight(1, #FFE);
