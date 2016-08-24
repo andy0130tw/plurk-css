@@ -62,7 +62,6 @@
                 height     250ms $material-ease-std,
                 margin     250ms $material-ease-std;
 
-
     border-radius: 4px;
     text-align: left;
     line-height: $timeline-button-height;
@@ -87,31 +86,40 @@
   }
 }
 
+#noti_re #mark_all_link.updater_link {
+  // "mark all as read" button
+  background: material-color('green', 50);
+  &:hover {
+    background: material-color('green', 500);
+  }
+}
+
 // Timeline -- Shortcuts
-// selectors are left intentially since they are awesome!
-#noti_np_text:after {
-  // [U]pdate all
-  content: ' [U]';
-}
+@if (enable-timeline-switch-shortcut) {
+  // selectors are left intentially since they are awesome!
+  #noti_np_text:after {
+    // [U]pdate all
+    content: ' [U]';
+  }
 
-#noti_re #mark_all_link.updater_link span:after {
-  // [M]ark all as read
-  content: ' [M]';
-}
+  #noti_re #mark_all_link.updater_link span:after {
+    // [M]ark all as read
+    content: ' [M]';
+  }
 
-#noti_re_text:after {
-  // [V]iew all
-  content: ' [V]';
-}
+  #noti_re_text:after {
+    // [V]iew all
+    content: ' [V]';
+  }
 
-#noti_re .updater_link .pif-cancel + span:after {
-  content: ' [V]';
+  #noti_re .updater_link .pif-cancel + span:after {
+    content: ' [V]';
+  }
 }
 
 // Timeline -- Filter switches
 #filter_tab {
   li a {
-
     // flex is here to help line up unreading counts
     display: flex;
     span {
@@ -138,13 +146,5 @@
   &:hover li a {
     margin-top: 8px !important;
 
-  }
-}
-
-#noti_re #mark_all_link.updater_link {
-  // "mark all as read" button
-  background: material-color('green', 50);
-  &:hover {
-    background: material-color('green', 500);
   }
 }

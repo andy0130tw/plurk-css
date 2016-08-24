@@ -36,11 +36,13 @@
   color: #888;
   font-weight: 500;
 
-  // tag icon
-  @include icon-font-plurk('\f040');
-  &:before {
-    font-size: .9em;
-    margin-right: 4px;
+  @if ($enable-timestamp-icons) {
+    // tag icon
+    @include icon-font-plurk('\f040');
+    &:before {
+      font-size: .9em;
+      margin-right: 4px;
+    }
   }
 }
 
@@ -52,28 +54,32 @@
   $paddingH: 4px;
   $paddingV: 8px;
 
-  padding: $paddingH $paddingV;
-  transform: translateY(-$paddingH) translateX(-$paddingV);
-
-  // always show to apply animations
-  display: block !important;
-  pointer-events: none;
-  opacity: 0.01;
-  transition: top  150ms $material-ease-out,
-              left 150ms $material-ease-out;
-
   box-shadow: 0px 0px 6px rgba(black, .7);
 
-  // up-arrow icon
-  @include icon-font-plurk('\f007');
-  &:before {
-    font-size: .7em;
-    color: white;
-    margin-right: 4px;
+  padding: $paddingH $paddingV;
+
+  @if ($enable-timestamp-transitions) {
+    // always show to apply animations
+    display: block !important;
+    pointer-events: none;
+    opacity: 0.01;
+    transition: all 150ms $material-ease-out;
+    transition-property: top, left, opacity;
+
+    &.show {
+      opacity: 1;
+    }
   }
 
-  &.show {
-    opacity: 1;
+  @if ($enable-timestamp-icons) {
+    // up-arrow icon
+    transform: translateY(-$paddingH);
+    @include icon-font-plurk('\f007');
+    &:before {
+      font-size: .7em;
+      color: white;
+      margin-right: 4px;
+    }
   }
 }
 
@@ -81,7 +87,8 @@
 .plurk {
   // normal state
   .response_count {
-    font-family: 'Roboto Mono', Menlo, 'Droid Mono', monospace;
+    @extend %use-decimal-fonts;
+    // font-family: 'Roboto Mono', Menlo, 'Droid Mono', monospace;
     text-align: center;
     display: inline-block;
 
@@ -97,7 +104,7 @@
     transform: translateX(8px);
 
     transition: all 250ms $material-ease-std;
-    transition-property: transform, border-radius, background, box-shadow;
+    transition-property: transform, color, border-radius, background, box-shadow;
    }
 
   &.new .response_count {
