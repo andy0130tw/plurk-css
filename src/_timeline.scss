@@ -11,8 +11,15 @@
 }
 
 #bottom_line {
-  background: rgba(black, .2);
-  height: 1px;
+  @if ($enable-timeline-bottom-gredient) {
+    // fancy timeline gradient to create depth effect
+    height: 36px;
+    background: linear-gradient(0deg, rgba(black, 0.3), transparent);
+  } @else {
+    // just a plain old line
+    height: 1px;
+    background: rgba(black, .2);
+  }
 }
 
 // Timeline -- Bottom time indicator
@@ -133,9 +140,9 @@
   }
 }
 
-/* Timeline -- Arrows */
+// Timeline -- Arrows
 .browse_button {
-  /* control the buttons manually */
+  // control the buttons manually
   opacity: 1;
 
   .cmp_arrow_left, .cmp_arrow_right {
@@ -188,6 +195,14 @@
   }
 
 }
+
+// Timeline -- Name color manipulation
+@include name-color-manipulation('',        #37474f);
+@include name-color-manipulation('rgb(228', #e91e63);  // red
+@include name-color-manipulation('rgb(34',  #03a9f4);  // blue
+@include name-color-manipulation('rgb(10',  #009688);  // green
+@include name-color-manipulation('rgb(174', #9c27b0);  // anony
+// TODO: more colors...
 
 // Timeline -- Creature
 #creature {
