@@ -151,14 +151,6 @@ a.meta {
   padding: 0;
 }
 
-// Timeline -- Name color manipulation
-@include name-color-manipulation('',        #37474f);
-@include name-color-manipulation('rgb(228', #e91e63);  // red
-@include name-color-manipulation('rgb(34',  #03a9f4);  // blue
-@include name-color-manipulation('rgb(10',  #009688);  // green
-@include name-color-manipulation('rgb(174', #9c27b0);  // anony
-// TODO: more colors...
-
 // Posts -- New message highlight
 // because we override the color of the background
 @include new-message-highlight(6, #FF9);

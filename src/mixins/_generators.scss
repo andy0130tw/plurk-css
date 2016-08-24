@@ -1,14 +1,16 @@
-
+// we need to force the change of color
+// also notice that `[style*=...]` selector does not promote the specificity
+// we should not use `!important` on rules on unstyled name
 @mixin name-color-manipulation($pattern, $color) {
   a.name {
     @if (str_length($pattern) > 0) {
       &[style*="#{$pattern}"] {
         color: $color !important;
-        text-shadow: rgba($color, .4);
+        text-shadow: 0 0 3px rgba($color, .4);
       }
     } @else {
       color: $color;
-      text-shadow: rgba($color, .4);
+      text-shadow: 0 0 3px rgba($color, .4);
     }
   }
 }
