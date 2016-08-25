@@ -197,7 +197,8 @@
 }
 
 // Timeline -- Name color manipulation
-@include name-color-manipulation('',        #37474f);
+a.name[style] { text-shadow: none; }  // patch for the unspecified at first
+@include name-color-manipulation('',        #37474f);  // unsp
 @include name-color-manipulation('rgb(228', #e91e63);  // red
 @include name-color-manipulation('rgb(34',  #03a9f4);  // blue
 @include name-color-manipulation('rgb(10',  #009688);  // green
