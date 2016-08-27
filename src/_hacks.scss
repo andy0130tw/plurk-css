@@ -1,8 +1,8 @@
 // Hardcoded background settings for f*cking awkward background override
 
-@if ($HACK-override-background-position) {
+@if ($HACK-override-background) {
   ._lch_ {
-    background: url(#{$HACK-override-background-image}) center center !important;
+    background: $HACK-override-background-color url(#{$HACK-override-background-image}) center center !important;
     background-size: cover !important;
     background-attachment: fixed !important;
   }

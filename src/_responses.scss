@@ -16,14 +16,12 @@
   .highlight_owner .name {
     text-decoration: none;
   }
-  .plurk_cnt {
-    .response_box & {
-      border-left: 3px solid #f1f1f1;
-    }
-    .highlight_owner & {
-      // Response -- Owner specialization
-      border-left: 3px solid #bbb;
-    }
+  .response_box .plurk_cnt {
+    border-left: 3px solid #f1f1f1;
+  }
+  .highlight_owner .plurk_cnt {
+    // Response -- Owner specialization
+    border-left: 3px solid #bbb;
   }
 
   .response_box {

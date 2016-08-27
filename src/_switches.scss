@@ -9,6 +9,14 @@
   }
 }
 
+// Timeline -- Loading
+#unread_loader {
+  color: white;
+  line-height: $timeline-button-height;
+  height: $timeline-button-height;
+  padding-left: 8px;
+}
+
 // Timeline -- Unread counter
 .unread_generic {
   font-weight: 700;

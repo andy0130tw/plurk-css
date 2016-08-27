@@ -55,6 +55,8 @@
 }
 
 .td_qual {
+  // make it line up with qualifier
+  line-height: $qualifier-height-in-em;
   // reset its padding, originally 5px
   padding-left: 4px;
 }
@@ -67,10 +69,12 @@ div .text_holder {
 }
 
 #timeline_cnt .plurk {
+  $animation-time: 350ms;
+
   .plurk_cnt {
     // initial state
     will-change: background, padding, transform, border-radius;
-    transition: all 350ms $material-ease-std;
+    transition: all $animation-time $material-ease-std;
     border: none;
     border-radius: 4px;
     padding: 4px 8px 4px 0;
@@ -153,9 +157,9 @@ a.meta {
 
 // Posts -- New message highlight
 // because we override the color of the background
-@include new-message-highlight(6, #FF9);
-@include new-message-highlight(5, #FFA);
-@include new-message-highlight(4, #FFB);
-@include new-message-highlight(3, #FFC);
-@include new-message-highlight(2, #FFD);
-@include new-message-highlight(1, #FFE);
+@include new-message-highlight(6, rgba(#FF9, .9));
+@include new-message-highlight(5, rgba(#FFA, .9));
+@include new-message-highlight(4, rgba(#FFB, .9));
+@include new-message-highlight(3, rgba(#FFC, .9));
+@include new-message-highlight(2, rgba(#FFD, .9));
+@include new-message-highlight(1, rgba(#FFE, .9));

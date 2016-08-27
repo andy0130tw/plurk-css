@@ -9,8 +9,9 @@ $enable-timeline-bottom-gredient: true;
 // ---------- HACKS ----------
 $HACK-plurk-content-shrinks-when-opened: false;  // not recommend; though it's cool
 $HACK-hide-plurk-bones: true;
-$HACK-override-background-position: true;
+$HACK-override-background: true;
 $HACK-override-background-image: '/static/theme/cold2015-theme/cold2015-bg.jpg';
+$HACK-override-background-color: #6696C4;  // usually the bar color; actual color will be (bg + bar) / 2
 
 // ---------- Fonts ----------
 $fonts-monospace: 'Ubuntu Mono', Menlo, Monaco, Inconsolata, monospace;
