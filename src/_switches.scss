@@ -1,3 +1,39 @@
+/* Switches - Plurk CSS
+   ---------------------
+
+   Main controls on the river are at the left-bottom corner of the timeline.
+
+    - Filters: Filters out plurks of specific interest. It was designed as
+               tabs before the theme change of Plurk.
+    - Buttons: Some handy buttons that appears when new plurks or responses
+               received. Shortcuts are available for these functionalities.
+
+   Structure:
+
+    div.timeline_control
+      div#timeline_control_holder
+        ul#filter_tab
+          li > a#favorite_plurks_tab_btn   > (i.pif-... span)
+          li > a#replurked_plurks_tab_btn  > (i.pif-... span)
+          li > a#responded_plurks_tab_btn  > (i.pif-... span)
+          li > a#private_plurks_tab_btn    > (i.pif-... span)
+          li > a#own_plurks_tab_btn        > (i.pif-... span)
+          li > a#all_plurks.bottom_line_bg > (i.pif-... span)
+            // only this is shown and other is collapsed
+    div#updater
+      div#noti_np.item
+        a
+          i.pif-messeng-new
+          span#noti_np_text
+          span#noti_np_count.unread_generic
+      div#noti_re.item
+        div#noti_re_view.item
+        div#noti_re_actions.item
+          a#mark_all_link.updater_link > (i.pif-check span)
+          a.updater_link > (i.pif-cancel span)
+
+*/
+
 // Timeline -- Icon width Unifying
 #filter_tab {
   .pif-like,

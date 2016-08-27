@@ -1,3 +1,24 @@
+/* Timeline - Plurk CSS
+   ---------------------
+
+   The main structure of Plurk is the timeline (aka river).
+   The day separators are wrapped with plurks, while the time indicators are
+   wrapped with backgrounds. The overall structure is complicated (honestly,
+   messy) but various difficulities can still be overcome.
+
+   Structure:
+
+   #timeline_holder
+     #timeline_cnt
+       div.block_cnt * n  // WIP
+     #timeline_bg
+       div#bottom_line
+       div.block_bg.day_start * n
+         div.div_one_line ... // WIP
+     #dynamic_logo
+
+*/
+
 // Timeline -- Structure
 #timeline_holder {
   @include material-shadow-polymer-4dp;

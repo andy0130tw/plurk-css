@@ -1,3 +1,34 @@
+/* Post - Plurk CSS
+   -----------------
+
+   Plurks on the river. Positions are explicitly set and various states are
+   specified as classes on `div.plurk`. Each plurk is placed inside
+   `#timeline_cnt div.block_cnt`.
+   Note that plurks are spreaded to different blocks, just like timestamps.
+
+   Structure:
+
+    div#p*.plurk[data-pid][data-rid][data-uid][data-type="plurk"][data-respcount]
+      table > tbody
+        tr
+          td.td_img
+            div.p_img
+              img
+          td
+            div#plurk_cnt_*.plurk_cnt.metro_c*
+              table > tbody
+                tr
+                  td.td_qual
+                    span > (a.name span.qual)
+                  td.cnt
+                    div.text_holder
+                    div.manager > (a.pif-* * 3)
+                tr.tr_info (not used)
+          td.td_response_count
+            a[href="/p/*"][target="_blank"] (span.response_count)
+
+*/
+
 // Timeline -- Avatars
 .p_img {
   @include material-shadow-polymer-8dp;
