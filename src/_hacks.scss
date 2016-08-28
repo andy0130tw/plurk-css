@@ -2,9 +2,22 @@
 
 @if ($HACK-override-background) {
   ._lch_ {
-    background: $HACK-override-background-color url(#{$HACK-override-background-image}) center center !important;
+    background: url(#{$HACK-override-background-image}) center center !important;
     background-size: cover !important;
     background-attachment: fixed !important;
+  }
+
+  ._lc_:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 42px;
+    background: $HACK-override-background-color;
+    // XXX: naive box-shadow
+    box-shadow: 0 -2px 12px rgba(black, .7);
   }
 }
 
