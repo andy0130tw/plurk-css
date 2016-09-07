@@ -127,6 +127,9 @@
     color: material-color('blue', 600);
     box-shadow: 1px 0 2px rgba(black, .25);
 
+    // for the shadow to be BELOW the main post box when expanded
+    position: relative;
+
     // originally detached from the plurk box
     // attached when opening (-> display state)
     transform: translateX(8px);

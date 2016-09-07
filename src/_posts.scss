@@ -43,8 +43,8 @@
     @include material-shadow-polymer-4dp;
     transform: translateX(24px) translateY(1px);
     border-radius: 50%;
-    // not working well on webkit
     z-index: 9999;
+    position: relative;
   }
 }
 
