@@ -1,3 +1,11 @@
 %use-decimal-fonts {
   font-family: $fonts-decimal;
 }
+
+%dashboard-card-title {
+  font-size: 16px;
+  // intact when hovered
+  color: #3f51b5 !important;
+  padding: 0;
+  margin: 4px 0;
+}

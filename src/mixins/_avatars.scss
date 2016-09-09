@@ -1,0 +1,11 @@
+%avatar-circle {
+  &, & img {
+    border-radius: 50%;
+    border: none;
+    transition: border-radius 100ms ease-in;
+  }
+
+  &:hover, &:hover img {
+    border-radius: 8px;
+  }
+}
