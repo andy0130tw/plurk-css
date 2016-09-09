@@ -111,6 +111,13 @@
   }
 }
 
+// Timeline -- Loading
+.cnt img {
+  filter: drop-shadow(0 0 3px white)
+          drop-shadow(0 0 3px white)
+          drop-shadow(0 0 3px white);
+}
+
 // Timeline -- Response count
 .plurk {
   // normal state
