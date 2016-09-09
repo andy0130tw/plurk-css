@@ -255,18 +255,19 @@
 }
 
 // Dashboard -- Award bar specialization
-#dash-award .award_bar {
-  div img {
-    transition: filter 200ms $material-ease-out;
-  }
-  div:hover img {
-    filter: brightness(1.2)
-            drop-shadow(0 2px 4px rgba(0, 0, 0, .5));
-  }
+#dash-award {
+  .award_bar div {
+    img {
+      transition: filter 200ms $material-ease-out;
+    }
+    &:hover img {
+      filter: brightness(1.2)
+              drop-shadow(0 2px 4px rgba(0, 0, 0, .5));
+    }
 
-  // hide "how to receive badge" link
-  a.link_arrow.openGB {
-    display: none;
+    // hide "how to receive badge" link
+    a.link_arrow.openGB {
+      display: none;
+    }
   }
 }
-
