@@ -32,7 +32,13 @@
       line-height: 24px;
     }
   }
+
+  .perma_link a:after {
+    // display yummy link!
+    content: ' [' attr(href) ']';
+  }
 }
+
 
 .plurk_cnt.response_time .holder {
   padding: 0;

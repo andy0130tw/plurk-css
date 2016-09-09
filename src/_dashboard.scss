@@ -113,6 +113,13 @@
   }
 }
 
+.plurk_to.private_to {
+  // texts overlapped with Plurk button if it moved to the bottom
+  // avoid by add a fixed margin
+  margin-right: (80px + 8px);
+  //             ^^^^ width of plurk button
+}
+
 %input-left-size-tweak {
   margin-left: 0 !important;
   padding-left: 4px !important;
@@ -270,4 +277,11 @@
       display: none;
     }
   }
+}
+
+// Dashboard -- Be responsive! patch
+.dash-segment-post,
+.dash-segment-profile,
+.dash-group-right {
+  max-width: 100vw;
 }
