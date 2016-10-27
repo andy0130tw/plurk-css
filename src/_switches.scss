@@ -167,6 +167,7 @@
   li a {
     // flex is here to help line up unreading counts
     display: flex;
+
     span {
       // unreading counts
       flex: 1 1 auto;
@@ -178,9 +179,12 @@
       text-shadow: 0 2px 4px rgba(black,.9);
     }
 
-    &.off_tab.has_unread {
-      background: material-color('red', 100);
-      color:      material-color('red', 600);
+    &.has_unread {
+      margin-top: 8px !important;
+      &.off_tab {
+        background: material-color('red', 100);
+        color:      material-color('red', 600);
+      }
     }
 
     &.filter_selected {
@@ -190,6 +194,5 @@
 
   &:hover li a {
     margin-top: 8px !important;
-
   }
 }
