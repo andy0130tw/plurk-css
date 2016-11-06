@@ -57,11 +57,13 @@
 .day_start .bottom_start {
   // marker for a day
   @extend %use-decimal-fonts;
-  font-size: 1.1em;
+  font-size: 1.05em;
   letter-spacing: 2px;
   padding: 0 8px;
-  background: rgba(white, .9);
-  color: #888;
+  background: rgba(#444, .9);
+  color: #ccc;
+  // force in front of other stamps
+  z-index: 1;
   font-weight: 500;
 
   @if ($enable-timestamp-icons) {
