@@ -58,7 +58,7 @@
   // marker for a day
   @extend %use-decimal-fonts;
   font-size: 1.05em;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   padding: 0 8px;
   background: rgba(#444, .9);
   color: #ccc;
@@ -68,10 +68,12 @@
 
   @if ($enable-timestamp-icons) {
     // tag icon
-    @include icon-font-plurk('\f040');
+    // @include icon-font-plurk('\f040');
+    @include icon-font-fontawesome('\f133');
     &:before {
-      font-size: .9em;
-      margin-right: 4px;
+      font-size: .8em;
+      vertical-align: .2em;
+      margin-right: .5em;
     }
   }
 }
