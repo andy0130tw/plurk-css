@@ -2,15 +2,24 @@
 // also notice that `[style*=...]` selector does not promote the specificity
 // we should not use `!important` on rules on unstyled name
 @mixin name-color-manipulation($pattern, $color) {
+  $name-color-shadow: 0 0 3px rgba($color, .3);
   a.name {
     @if (str_length($pattern) > 0) {
       &[style*="#{$pattern}"] {
-        color: $color !important;
-        text-shadow: 0 0 3px rgba($color, .4);
+        @if ($enable-post-name-override) {
+          color: $color !important;
+        }
+        @if ($enable-post-name-shadow) {
+          text-shadow: $name-color-shadow;
+        }
       }
     } @else {
-      color: $color;
-      text-shadow: 0 0 3px rgba($color, .4);
+      @if ($enable-post-name-override) {
+        color: $color;
+      }
+      @if ($enable-post-name-shadow) {
+        text-shadow: $name-color-shadow;
+      }
     }
   }
 }

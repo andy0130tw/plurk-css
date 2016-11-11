@@ -1,10 +1,17 @@
 // TODO: draft
 
 // ---------- Features ----------
+//
+// some feature that IMO are optional.
+// some people may not like them, so they are designed to be modular (as possible)
+// that way you can turn something off easily
+//
 $enable-timeline-switch-shortcut: true;
 $enable-timestamp-transitions: true;
 $enable-timestamp-icons: true;
 $enable-timeline-bottom-gredient: true;
+$enable-post-name-shadow: true;
+$enable-post-name-override: true;
 
 // ---------- HACKS ----------
 $HACK-plurk-content-shrinks-when-opened: false;  // not recommend; though it's cool

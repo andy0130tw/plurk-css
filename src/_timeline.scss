@@ -239,7 +239,15 @@ a.name[style] { text-shadow: none; }  // patch for the unspecified at first
 @include name-color-manipulation('rgb(34',  #03a9f4);  // blue
 @include name-color-manipulation('rgb(10',  #009688);  // green
 @include name-color-manipulation('rgb(174', #9c27b0);  // anony
-// TODO: more colors...
+
+// XXX: naive color naming... should be more specific
+// TODO: replace to material-equivalent color
+@include name-color-manipulation('rgb(255, 155', rgb(255, 155, 101));  // orange
+@include name-color-manipulation('rgb(186',      rgb(186, 143, 190));  // violet
+@include name-color-manipulation('rgb(232',      rgb(232, 175, 55));  // earth
+@include name-color-manipulation('rgb(99',       rgb(99, 198, 211));  // aqua
+@include name-color-manipulation('rgb(255, 165', rgb(255, 165, 154));  // rose
+@include name-color-manipulation('rgb(134',      rgb(134, 202, 111));  // grass
 
 // Timeline -- Creature
 #creature {
