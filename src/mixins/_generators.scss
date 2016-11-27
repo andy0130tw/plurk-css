@@ -4,8 +4,14 @@
 @mixin name-color-manipulation($pattern, $color) {
   $name-color-shadow: 0 0 3px rgba($color, .3);
   a.name {
-    @if (str_length($pattern) > 0) {
-      &[style*="#{$pattern}"] {
+    @if ((type-of($pattern) == 'string' and str_length($pattern) > 0) or
+          type-of($pattern) == 'list') {
+      $sel: '&';
+      @each $item in $pattern {
+        $sel: unquote('#{$sel}[style*="#{$item}"]');
+      }
+
+      #{$sel} {
         @if ($enable-post-name-override) {
           color: $color !important;
         }
