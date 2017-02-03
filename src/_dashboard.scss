@@ -23,9 +23,15 @@
     @extend %dashboard-card-title;
   }
 
-  &.narrow .dash-group-left {
+  &.narrow {
     // when viewport being narrow
-    padding-right: 0;
+    .dash-segment-friends, .dash-segment-fans {
+      width: 100%;
+    }
+
+    .dash-group-left {
+      padding-right: 0;
+    }
   }
 
   /* Dashboard -- Profile */
@@ -196,6 +202,24 @@
   text-shadow: 1px 1px 3px rgba(white, .35);
 }
 
+// hide "how to receive badge" link
+#dash-stats {
+  @if ($enable-hide-how-links) {
+    .link_arrow {
+      display: none;
+    }
+  }
+}
+
+// Dashboard -- stats table
+#dash-stats-table {
+  // given the text inside, if we want to prevent wrapping
+  // the fastest way is to restrict a min size
+  min-width: 22.5em;
+  // table is a bit weird... just a (light) workaround
+  border-left: 12px solid transparent;
+}
+
 #karma {
   color: white !important;
   // improved -- fine-grained shadow
@@ -215,6 +239,12 @@
   // the icons of friend must be in one line
   margin-left: -11px;
   margin-right: -11px;
+
+  .narrow & {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   // XXX: preserve space without clearing float
   // overflow-x: hidden;
   // overflow-y: auto;
@@ -262,8 +292,10 @@
   }
 
   // hide "how to receive badge" link
-  a.link_arrow.openGB {
-    display: none;
+  @if ($enable-hide-how-links) {
+    a.link_arrow {
+      display: none;
+    }
   }
 }
 
