@@ -34,21 +34,11 @@
     color: #767676 !important;  /* 54% */
   }
 
-  .nick_name {
-    font-size: 14px;
-  }
-
   // Dashboard -- Profile
   .dash-segment-profile #dash-profile {
     // sorry for bad selector, but we are going to own the priority!
     height: 96px;  /* 80 + 16, originally 86 */
     padding: 8px;
-
-    #full_name .display_name {
-      color: #3f51b5;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
 
     .profile-info {
       bottom: 8px;
@@ -60,11 +50,22 @@
       border-radius: 80px;
       // transition: border-radius 400ms ease-in;
     }
+  }
+}
 
-    #full_name {
-      color: #212121;  /* 87% */
-      font-size: 18px;
-    }
+#full_name {
+  color: #212121;  /* 87% */
+  font-size: 18px;
+
+  .display_name {
+    color: #3f51b5;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .nick_name {
+    font-size: 14px;
+    @extend %use-decimal-fonts;
   }
 }
 
@@ -128,11 +129,6 @@
 #input_big {
   @extend %input-left-size-tweak;
   margin-top: 8px !important;
-}
-
-#input_small {
-  @extend %input-left-size-tweak;
-  margin-top: 4px !important;
 }
 
 .m_qualifier {
@@ -207,18 +203,10 @@
                -1px  0   2px rgba(black, .3),
                 0    1px 2px rgba(black, .3),
                 0   -1px 2px rgba(black, .3);
-  // naive text shadow
-  // text-shadow: 0 0 1px rgba(0, 0, 0, .2),
-  //              0 0 2px rgba(0, 0, 0, .3),
-  //              0 0 4px rgba(0, 0, 0, .5);
 }
 
 #karma_arrow {
   font-size: 18px;
-}
-
-#full_name .nick_name {
-  @extend %use-decimal-fonts;
 }
 
 // Dashboard -- Friend list / Fan list

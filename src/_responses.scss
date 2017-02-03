@@ -50,7 +50,7 @@
 }
 
 // Response -- Response time
-// (new customizable area since Feb 17)
+// (new customizable area since Feb 17, 2016)
 // NOTE: very hack!
 .plurk_cnt.response_time {
   border-radius: 0 4px 4px 0;
@@ -66,4 +66,11 @@
   p {
     color: #555;
   }
+}
+
+// Composing area
+#input_small {
+  // input box
+  @extend %input-left-size-tweak;
+  margin-top: 4px !important;
 }
