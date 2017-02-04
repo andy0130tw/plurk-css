@@ -170,10 +170,19 @@ div .text_holder {
 }
 
 // Posts -- Controls
-.manager a {
-  display: inline-block;
-  min-width: 2em;
-  text-align: center;
+.manager {
+  .plurk.display & {
+    // when the control disappears, the position of the response box (which is under the plurk box)
+    // is not recalculated, resulting a big ugly gap between them
+    // maybe a bug of Plurk itself
+    display: block;
+  }
+
+  & a {
+    display: inline-block;
+    min-width: 2em;
+    text-align: center;
+  }
 }
 
 // Posts -- Media
