@@ -98,7 +98,7 @@
     transition: all 150ms $material-ease-out;
     transition-property: top, left, opacity;
 
-    &.show {
+    &[style*="block"] {
       opacity: 1;
     }
   }
@@ -234,20 +234,20 @@
 
 // Timeline -- Name color manipulation
 a.name[style] { text-shadow: none; }  // patch for the unspecified at first
-@include name-color-manipulation('',        #37474f);  // unsp
-@include name-color-manipulation('rgb(228', #e91e63);  // red
-@include name-color-manipulation('rgb(34',  #03a9f4);  // blue
-@include name-color-manipulation('rgb(10',  #009688);  // green
-@include name-color-manipulation('rgb(174', #9c27b0);  // anony
+@include name-color-manipulation('',    #37474f);  // unsp
+@include name-color-manipulation('#E4', #e91e63);  // red
+@include name-color-manipulation('#22', #03a9f4);  // blue
+@include name-color-manipulation('#0A', #009688);  // green
+@include name-color-manipulation('#AE', #9c27b0);  // anony
 
 // XXX: naive color naming... should be more specific
 // TODO: replace to material-equivalent color
-@include name-color-manipulation('rgb(255' '101)', rgb(255, 155, 101));  // orange
-@include name-color-manipulation('rgb(186',        rgb(186, 143, 190));  // violet
-@include name-color-manipulation('rgb(232',        rgb(232, 175, 55));   // earth
-@include name-color-manipulation('rgb(99',         rgb(99, 198, 211));   // aqua
-@include name-color-manipulation('rgb(255' '154)', rgb(255, 165, 154));  // rose
-@include name-color-manipulation('rgb(134',        rgb(134, 202, 111));  // grass
+@include name-color-manipulation('rgb(FF9', #FF9B65);  // orange
+@include name-color-manipulation('rgb(BA8', #BA8FBE);  // violet
+@include name-color-manipulation('rgb(E8A', #E8AF37);  // earth
+@include name-color-manipulation('rgb(63C', #63C6D3);  // aqua
+@include name-color-manipulation('rgb(FFA', #FFA59A);  // rose
+@include name-color-manipulation('rgb(86C', #86CA6F);  // grass
 
 // Timeline -- Creature
 #creature {
