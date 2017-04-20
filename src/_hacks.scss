@@ -16,6 +16,8 @@
     right: 0;
     height: 42px;
     background: $HACK-override-background-color;
+    // to cover the glow of dynamic logo
+    z-index: 11;
     // XXX: naive box-shadow
     box-shadow: 0 -2px 12px rgba(black, .7);
   }
