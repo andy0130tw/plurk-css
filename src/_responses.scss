@@ -40,8 +40,11 @@
 }
 
 
-.plurk_cnt.response_time .holder {
-  padding: 0;
+.plurk_cnt.response_time {
+  transition: top 150ms $material-ease-out;
+  .holder {
+    padding: 0;
+  }
 }
 
 // give the box the ability to be resized!!
