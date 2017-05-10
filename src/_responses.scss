@@ -2,7 +2,6 @@
 #form_holder {
   margin-top: 1px;
   border-radius: 0 0 4px 4px;
-  overflow: hidden;
 
   // customized box-shadow; not remembering why
   @extend %material-shadow-legacy-3-6;
