@@ -71,6 +71,16 @@
   }
 }
 
+// hide ads and add back the round corner
+// %%%: not a realistic fix; use sparingly
+#resp_banner_ads {
+  display: none !important;
+  // from the original style
+  height: 0;
+  margin-top: -3px;
+}
+
+
 // Composing area
 #input_small {
   // input box
