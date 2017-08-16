@@ -25,17 +25,33 @@
     border-left: 3px solid #bbb;
   }
 
-  .response_box {
-    .favorite_count, .replurk_count {
-      // smaller than what spec says
-      border-radius: 12px;
-      padding: 0 6px;
-      line-height: 24px;
+  .favorite_count, .replurk_count {
+    // smaller than what spec says
+    // Ref. https://material.io/guidelines/components/chips.html#chips-contact-chips
+    $chip-height: 24px;
+
+    border-radius: $chip-height / 2;
+    padding: 0 8px 0 0;
+    line-height: $chip-height;
+
+    &:before {
+      display: inline-block;
+      width: $chip-height;
+      text-align: center;
     }
+  }
+
+  .favorite_count {
+    @include icon-font-plurk('\f01c');
+  }
+
+  .replurk_count {
+    @include icon-font-plurk('\f02f');
   }
 
   .perma_link a:after {
     // display yummy link!
+    font-size: .8em;
     content: ' [' attr(href) ']';
   }
 }

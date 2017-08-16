@@ -95,8 +95,10 @@
     display: block !important;
     pointer-events: none;
     opacity: 0.01;
-    transition: all 150ms $material-ease-out;
-    transition-property: top, left, opacity;
+    // reduce visual impact
+    transition: top     150ms        $material-ease-out,
+                left    150ms        $material-ease-out,
+                opacity  50ms  100ms $material-ease-out;
 
     &[style*="block"] {
       opacity: 1;

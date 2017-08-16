@@ -13,6 +13,7 @@ $enable-timeline-bottom-gredient: true;
 $enable-post-name-shadow: true;
 $enable-post-name-override: true;
 $enable-hide-how-links: true;
+$enable-dashboard-icon: true;
 
 // ---------- HACKS ----------
 $HACK-plurk-content-shrinks-when-opened: false;  // not recommend; though it's cool
@@ -24,7 +25,7 @@ $HACK-override-background-color: #6696C4;  // usually the bar color; actual colo
 // ---------- Fonts ----------
 $fonts-monospace: 'Ubuntu Mono', Menlo, Monaco, Inconsolata, monospace;
 $fonts-textarea: 'Source Han Sans', 'Source Han Sans TC', 'Noto Sans CJK', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-$fonts-decimal: 'Open Sans', 'Segoe UI', 'Source Sans Pro', 'Trebuchet MS', sans-serif;
+$fonts-decimal: 'Open Sans', Lato, 'Source Sans Pro', sans-serif;
 
 // ---------- Metrics ----------
 $timeline-button-height: 28px;

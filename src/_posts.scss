@@ -156,15 +156,21 @@ div .text_holder {
 
   // muted
   &.muted {
-    opacity: .6;
+    opacity: .8;
     transition: opacity 250ms ease-in;
 
-    .plurk_box {
-      opacity: .9;
+    // back to normal state when expanding
+    &.display {
+      opacity: 1;
     }
 
+    .plurk_cnt {
+      // will be overriden upon expansion so don't worry here
+      background-color: rgba(#ddd, 0.9);
+    }
     .plurk_cnt .text_holder {
-      color: #555;
+      // fade the text
+      color: #888;
     }
   }
 }
@@ -178,10 +184,15 @@ div .text_holder {
     display: block;
   }
 
-  & a {
+  a {
     display: inline-block;
     min-width: 2em;
     text-align: center;
+  }
+
+  .like span,
+  .replurk span {
+    @extend %use-decimal-fonts;
   }
 }
 

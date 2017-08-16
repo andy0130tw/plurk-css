@@ -279,6 +279,27 @@
   @extend %material-shadow-legacy-3-6;
 }
 
+// Dashboard -- icons
+h2 {
+  @if ($enable-dashboard-icon) {
+    #dash-stats   &:before,
+    #dash-friends &:before,
+    #dash-fans    &:before {
+      padding-right: 4px;
+    }
+
+    #dash-stats & {
+      @include icon-font-plurk('\f02b');
+    }
+    #dash-friends & {
+      @include icon-font-plurk('\f017');
+    }
+    #dash-fans & {
+      @include icon-font-plurk('\f013');
+    }
+  }
+}
+
 // Dashboard -- Award bar specialization
 #dash-award {
   .award_bar div {
