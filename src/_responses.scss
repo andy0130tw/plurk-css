@@ -25,7 +25,7 @@
     border-left: 3px solid #bbb;
   }
 
-  .favorite_count, .replurk_count {
+  .private_info, .favorite_count, .replurk_count {
     // smaller than what spec says
     // Ref. https://material.io/guidelines/components/chips.html#chips-contact-chips
     $chip-height: 24px;
@@ -35,10 +35,16 @@
     line-height: $chip-height;
 
     &:before {
+      // .private_info has a built-in icon, which we can leverage on ...
       display: inline-block;
       width: $chip-height;
       text-align: center;
     }
+  }
+
+  .private_info:before {
+    // ... but its margin needs reset
+    margin: 0;
   }
 
   .favorite_count {
