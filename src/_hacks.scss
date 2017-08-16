@@ -47,3 +47,49 @@
 @if ($HACK-hide-plurk-bones) {
   .pif-bone { display: none !important; }
 }
+
+// HACK! by using the class name _lch_ (which is strangly not being prepanding the class _lc_),
+// we can actually style more elements than it seems to be!
+// former elements, however, still can't be styled with this technique
+._lch_ {
+  @if ($HACK-lch-siblings) {
+    // 1. the menu on the top-right
+    ~ .pop-menu {
+      @include material-shadow-polymer-6dp;
+    }
+    // 2. notification list (new in 2017/7)
+    ~ #noti-list {
+
+    }
+    // 3. the overlay of light box
+    ~ .pop-window-overlay {
+
+    }
+    // 4. the light box
+    ~ .pop-window.colorbox {
+
+    }
+    // ad-hoc popups: qualifier selector, share options, etc.
+    // note that these boxes don't have specific class name to be selected so be careful
+    // playing around
+    ~ .pop-view {
+      .qual_menu {
+        // lovely!
+        column-count: 3;
+        column-gap: 10px;
+      }
+    }
+    // ad-hoc tooltips
+    ~ .pop-view.pop-tooltip {
+
+    }
+    // ad-hoc emoji selector
+    ~ #emoticon_selecter {
+
+    }
+    // ad-hoc privacy options
+    ~ .pop-view.more_options_holder {
+
+    }
+  }
+}
