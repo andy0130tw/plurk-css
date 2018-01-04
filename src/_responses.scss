@@ -107,3 +107,12 @@
   @extend %input-left-size-tweak;
   margin-top: 4px !important;
 }
+
+// warning message; only shows when too many line breaks present in the response
+#input_small_lbu {
+  display: none;
+  &.char_highlight {
+    // should be `unset`
+    display: block;
+  }
+}

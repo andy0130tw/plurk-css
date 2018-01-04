@@ -118,13 +118,41 @@
   .plurkForm {
     padding: 0;
   }
-}
 
-.plurk_to {
-  // texts overlapped with Plurk button if it moved to the bottom
-  // avoid by add a fixed margin
-  margin-right: (80px + 8px);
-  //             ^^^^ width of plurk button
+  .plurk_to {
+    // texts overlapped with Plurk button if it moved to the bottom
+    // avoid by add a fixed margin
+    margin-right: (80px + 8px);
+    //             ^^^^ width of plurk button
+  }
+
+  /* FIXME: legacy code, in fact */
+  /* move the messages less the position of Plurk but
+     disable this if you don't apply the bonus above */
+  .whispers_hint {
+    position: relative;
+    right: 88px;
+  }
+
+  .submit_img {
+    margin-top: 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    /* box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14)
+                0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                0 3px 5px -1px rgba(0, 0, 0, 0.4);*/
+    /* bonus: move the Plurk button to the bottom of the text area,
+     * disable the box-shadow above to match the style             */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .icons_holder {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    // TODO: to strengthen the icon
+    // add a subtle radial-gradient background, for example
+  }
 }
 
 %input-left-size-tweak {
@@ -143,33 +171,6 @@
 
 .dd_img, .submit_img {
   transition: background 250ms ease-out;
-}
-
-#main_poster .submit_img {
-  margin-top: 8px;
-  border-radius: 4px;
-  font-weight: 500;
-  /* box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14)
-              0 1px 18px 0 rgba(0, 0, 0, 0.12),
-              0 3px 5px -1px rgba(0, 0, 0, 0.4);*/
-  /* bonus: move the Plurk button to the bottom of the text area,
-   * disable the box-shadow above to match the style             */
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-/* move the messages less the position of Plurk but
-   disable this if you don't apply the bonus above */
-#plurk_to, .whispers_hint {
-  position: relative;
-  right: 88px;
-}
-
-#main_poster .icons_holder {
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
-  // TODO: to strengthen the icon
-  // add a subtle radial-gradient background, for example
 }
 
 // Dashboard -- Additional info

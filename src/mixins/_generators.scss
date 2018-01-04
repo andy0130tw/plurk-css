@@ -8,7 +8,7 @@
           type-of($pattern) == 'list') {
       $sel: '&';
       @each $item in $pattern {
-        $sel: unquote('#{$sel}[style*="#{$item}"]');
+        $sel: '#{$sel}[style*="#{$item}"]';
       }
 
       #{$sel} {
