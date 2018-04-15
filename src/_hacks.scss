@@ -48,6 +48,11 @@
   .pif-bone { display: none !important; }
 }
 
+// hide sponsers
+#timeline_holder#timeline_holder .banana_plurk {
+    display: none !important;
+}
+
 // HACK! by using the class name _lch_ (which is strangly not being prepanding the class _lc_),
 // we can actually style more elements than it seems to be!
 // former elements, however, still can't be styled with this technique

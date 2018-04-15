@@ -272,8 +272,8 @@
   @include material-shadow-polymer-8dp;
 }
 
-#dash-friends-pics .user_link,
-#dash-fans-pics    .user_link {
+#dash-friends-pics .user_link img,
+#dash-fans-pics    .user_link img {
   // mixins/_avatars
   @extend %avatar-circle;
   display: block;
