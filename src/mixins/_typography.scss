@@ -1,5 +1,11 @@
 %use-decimal-fonts {
   font-family: $fonts-decimal;
+  // when displaying decimals, it is desirable to
+  // use tabular figures
+  font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
 }
 
 %dashboard-card-title {

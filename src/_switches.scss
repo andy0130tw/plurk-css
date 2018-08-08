@@ -164,23 +164,30 @@
 
 // Timeline -- Filter switches
 #filter_tab {
+  // the margin-top is a little tricky here; the state is not explicitly coded in CSS
+  // also, the hidden switches, having their heights 0, still show the margin
+  %apply-margin {
+    margin-top: $switch-margin;
+  }
+
   li a {
     // flex is here to help line up unreading counts
     display: flex;
 
     span {
       // unreading counts
+      @extend %use-decimal-fonts;
       flex: 1 1 auto;
       font-size: 1.1em;
       text-align: right;
       padding: 0;
       margin-left: 8px;
       background: transparent;
-      text-shadow: 0 2px 4px rgba(black,.9);
+      text-shadow: 0 1px 4px rgba(black, .9);
     }
 
     &.has_unread {
-      margin-top: 8px !important;
+      @extend %apply-margin;
       &.off_tab {
         background: material-color('red', 100);
         color:      material-color('red', 600);
@@ -188,11 +195,14 @@
     }
 
     &.filter_selected {
+      @extend %apply-margin;
       @include material-shadow-polymer-8dp;
     }
   }
 
   &:hover li a {
-    margin-top: 8px !important;
+    // when the container is hovered, all items are shown
+    // i.e. margins are applied to all elements
+    @extend %apply-margin;
   }
 }

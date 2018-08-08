@@ -259,3 +259,8 @@ a.name[style] { text-shadow: none; }  // patch for the unspecified at first
           drop-shadow(0 0 25px rgba(white, .6))
           drop-shadow(0 0 45px rgba(white, .9));
 }
+
+// Timeline -- message
+#empty_timeline_fg a {
+  font-weight: 700;
+}
