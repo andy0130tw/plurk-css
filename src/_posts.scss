@@ -82,6 +82,7 @@
 // Posts
 .td_cnt {
   // reset its padding, originally 5px
+  // TODO: a suitable padding-top is needed to match the baseline of the quantifier
   padding-right: 0;
 }
 
@@ -104,14 +105,17 @@ div .text_holder {
 
   .plurk_cnt {
     // initial state
-    will-change: background, padding, transform, border-radius;
-    transition: all $animation-time $material-ease-std;
     border: none;
     border-radius: 4px;
     padding: 4px 8px 4px 0;
     box-shadow: 0 3px 6px rgba(black, 0.16),
                 0 3px 6px rgba(black, 0.23);
     background: rgba(251, 251, 255, .65);
+    // tricky, wtf style transition to be as **natural** as possible
+    transition: background    $animation-time        $material-ease-std,
+                border-radius $animation-time        $material-ease-std,
+                transform     $animation-time        $material-ease-out,
+                padding      ($animation-time / 2) $material-ease-out;
   }
 
   &.display .plurk_cnt {
@@ -128,30 +132,26 @@ div .text_holder {
 
   &.display.plurk_box {
     z-index: 2000; // originally 1200
+
+    .td_qual {
+      // a little jumpy but acceptable
+      padding-left: 28px;
+    }
   }
 
   &.display.plurk_box .plurk_cnt {
-    @if ($HACK-plurk-content-shrinks-when-opened) {
-      // when opened
-      // the width will be added accordingly.
-      // padding animation will mess up the calculation,
-      // which is a known limitation
-      padding: 8px 16px 8px 24px;
-    } @else {
-      padding: 8px 8px 8px 24px;
-    }
     border-radius: 4px 4px 0 0;
+    // lift up a little bit
     transform: translateY(-8px);
+    padding-top: 8px;
+    padding-bottom: 8px;
     box-shadow: 0 14px 28px rgba(black, 0.25),
                 0 10px 10px rgba(black, 0.22);
     background: rgba(255, 255, 255, .95);
-  }
 
-  &.display.plurk_box {
-    /* 503
-     + outer (left 24 + right  8)
-     - inner (left  1 + right  5) */
-    width: 529px;
+    .td_cnt {
+      padding-bottom: 0;
+    }
   }
 
   // muted
@@ -177,6 +177,15 @@ div .text_holder {
 
 // Posts -- Controls
 .manager {
+  // reset
+  padding: 0;
+
+  // work as a separator with `text_holder`
+  // margin-top: 4px; -- such a coincidence!
+  // sightly increase the size
+  font-size: 14px;
+  line-height: (24px - 1px);  // see `& a`
+
   .plurk.display & {
     // when the control disappears, the position of the response box (which is under the plurk box)
     // is not recalculated, resulting a big ugly gap between them
@@ -185,9 +194,13 @@ div .text_holder {
   }
 
   a {
+    // WTF the icons' asymmetric paddings
+    padding-top: 0;
+    padding-bottom: 1px;
     display: inline-block;
     min-width: 2em;
     text-align: center;
+    border-radius: 4px;
   }
 
   .like span,

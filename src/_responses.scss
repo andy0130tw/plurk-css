@@ -1,16 +1,21 @@
 // Responses
 #form_holder {
-  margin-top: 1px;
+  border-top: 1px dashed #aaa;
   border-radius: 0 0 4px 4px;
 
   // customized box-shadow; not remembering why
-  @extend %material-shadow-legacy-3-6;
+  // aha I remembered. to reduce the annoyance of the top shadow
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.16),
+              0 4px 6px -1px rgba(0, 0, 0, 0.23);
 
   .info_box.controller {
     border-radius: 0 0 4px 4px;
   }
-  .response_box .list {
-    transition: height 250ms $material-ease-out;
+  .response_box {
+    border-top-style: none;
+    .list {
+      transition: height 250ms $material-ease-out;
+    }
   }
 
   // use left border to highlight owner instead
