@@ -72,6 +72,10 @@
   transition: top 150ms $material-ease-out;
   .holder {
     padding: 0;
+    p {
+      font-size: 13px;
+      line-height: 16px;
+    }
   }
 }
 

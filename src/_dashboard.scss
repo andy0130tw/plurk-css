@@ -221,8 +221,18 @@
   border-left: 12px solid transparent;
 }
 
+.karma_hover {
+  font-family: 'Source Serif', 'IBM Plex Serif', Georgia, serif;
+  // if possible :)
+  font-variant-numeric: oldstyle-nums;
+  -moz-font-feature-settings: "onum";
+  -webkit-font-feature-settings: "onum";
+  font-feature-settings: "onum";
+}
+
 #karma {
   color: white !important;
+  font-weight: 500;
   // improved -- fine-grained shadow
   text-shadow:  1px  0   2px rgba(black, .3),
                -1px  0   2px rgba(black, .3),
