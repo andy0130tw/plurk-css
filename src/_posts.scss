@@ -147,7 +147,7 @@ div .text_holder {
     padding-bottom: 8px;
     box-shadow: 0 14px 28px rgba(black, 0.25),
                 0 10px 10px rgba(black, 0.22);
-    background: rgba(255, 255, 255, .95);
+    background: rgba(material-color('blue-grey', '50'), 1);
 
     .td_cnt {
       padding-bottom: 0;

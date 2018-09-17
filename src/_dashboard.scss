@@ -57,23 +57,27 @@
       // transition: border-radius 400ms ease-in;
     }
   }
+
+  #dash-profile {
+    #full_name {
+      color: #212121;  /* 87% */
+      font-size: 18px;
+
+      .display_name {
+        font-size: 20px;
+        color: #3f51b5;
+        font-weight: 500;
+        margin-bottom: 8px;
+      }
+
+      .nick_name {
+        font-size: 14px;
+        @extend %use-decimal-fonts;
+      }
+    }
+  }
 }
 
-#full_name {
-  color: #212121;  /* 87% */
-  font-size: 18px;
-
-  .display_name {
-    color: #3f51b5;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-
-  .nick_name {
-    font-size: 14px;
-    @extend %use-decimal-fonts;
-  }
-}
 
 .dash-segment .segment-content {
   @include material-shadow-polymer-2dp;
